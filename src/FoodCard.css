@@ -1,0 +1,114 @@
+/* BurgerCard.css */
+.food-card {
+    width: 300px;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.food-card img {
+    width: 100%;
+    height: 200px; /* Set a fixed height for the images */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.food-card:hover {
+    transform: scale(1.05);
+}
+
+.food-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.food-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #fff; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden; /* Ensure children are clipped to the container */
+}
+
+.quantity-selector button {
+    background-color: #f44336; /* Background color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 10px 15px; /* Padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 20px; /* Font size */
+    outline: none; /* Remove focus outline */
+}
+
+.quantity-selector button:focus {
+    outline: none; /* Remove focus outline */
+}
+
+.quantity-selector span {
+    width: 40px; /* Width of span */
+    text-align: center; /* Center text */
+    font-size: 20px; /* Font size */
+    background-color: #f44336; /* Background color */
+    color: white; /* Text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity-selector button:first-child {
+    border-right: 1px solid white; /* Border between button and span */
+}
+
+.quantity-selector button:last-child {
+    border-left: 1px solid white; /* Border between span and button */
+}
+
+.add-to-cart {
+    background-color: #ff9800; /* Background color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding for the button */
+    font-size: 18px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    margin-top: 10px; /* Margin to space out from quantity selector */
+}
+
+.add-to-cart:hover {
+    background-color: #e68900; /* Darker background color on hover */
+}
+
+.add-to-cart:focus {
+    outline: none; /* Remove default focus outline */
+}
+
+.add-to-cart:active {
+    background-color: #cc7700; /* Even darker background color on click */
+    transform: translateY(2px); /* Slightly move button down on click */
+}
+
+.food-card.active {
+    background-color: #f44336;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.food-card.active p {
+    color: white;
+}

@@ -1,0 +1,59 @@
+/* Header.css */
+.header {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping */
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    white-space: nowrap; /* Prevent buttons from wrapping to the next line */
+    justify-content: center; /* Centers the header content horizontally */
+}
+
+
+
+@media (min-width: 601px) and (max-width: 1024px){
+
+    .header {
+        justify-content: flex-start; /* Align items to the start on smaller screens */
+    }
+
+    .header button{
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .header button{
+        font-size: 20px;
+    }
+    
+    .header {
+        justify-content: flex-start; /* Align items to the start on smaller screens */
+    }
+}
+
+
+.header button{
+    flex: 0 0 auto;
+    margin: 0 5px;
+}
+
+.header-button {
+    background: none;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.header-button.active {
+    background-color: #ffcccb; /* Active background color */
+    border-color: #ff4444; /* Active border color */
+}
