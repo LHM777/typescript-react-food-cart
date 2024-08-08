@@ -12,7 +12,7 @@ import { CartItem } from './types';
 
 const App: React.FC = () => {
 
-  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('Burger');
   const [quantities, setQuantities] = useState<number[]>(new Array(8).fill(0)); // Assuming max 8 items per category
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -105,6 +105,7 @@ const App: React.FC = () => {
 
 
     const getItemsForCategory = (category: string) => {
+
         switch (category) {
             case 'Burger':
                 return burgers;
@@ -229,9 +230,16 @@ const App: React.FC = () => {
     };
 
 
+
+    const handleCategoryChange = (category: string) => {
+        setActiveCategory(category);
+        setActiveIndex(null); // Reset the active index when changing categories
+    };
+
+
     return (
         <div className="app">
-            <Header activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+            <Header activeCategory={activeCategory} setActiveCategory={handleCategoryChange} />
 
             <button className= "view-cart-button" onClick={toggleCartModal}>View Cart</button>
 
